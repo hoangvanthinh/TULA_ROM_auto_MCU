@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.25.3.0
+Copyright (C) 2018 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Thinh Hoang Van, Microsoft, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 4.74.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.03 [Build 76]
+Assembler:       Armasm.exe V5.03.0.76 [Evaluation]
+Linker/Locator:  ArmLink.exe V5.03.0.76 [Evaluation]
+Library Manager: ArmAr.exe V5.03.0.76 [Evaluation]
+Hex Converter:   FromElf.exe V5.03.0.76 [Evaluation]
+CPU DLL:         SARMCM3.DLL V4.74.0.0
+Dialog DLL:      DARMCM1.DLL V1.11.00.0
+Target DLL:      Nu_Link.dll V2.06
+Dialog DLL:      TARMCM1.DLL V1.08.00.0
+ 
+<h2>Project:</h2>
+F:\Project\Tula\Maynaprom\ModbusRTU_NU\Modbus.uvproj
+Project File Date:  04/18/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.03 [Build 76]', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'Modbus'
+assembling startup_NUC100Series.s...
+compiling SYS_init.c...
+compiling system_NUC100Series.c...
+compiling main.c...
+main.c(22): warning:  #550-D: variable "in_char" was set but never used
+      uint8_t in_char;
+main.c(51): warning:  #167-D: argument of type "char *" is incompatible with parameter of type "uint8_t *"
+  						UART_Write(UART1, Text, 16);
+main.c(39): warning:  #177-D: variable "i" was declared but never referenced
+      uint32_t i =0;
+main.c: 3 warnings, 0 errors
+compiling gpio.c...
+compiling clk.c...
+compiling sys.c...
+compiling Init.c...
+compiling timer.c...
+compiling uart.c...
+compiling Interrupt.c...
+compiling General.c...
+linking...
+Program Size: Code=1920 RO-data=328 RW-data=44 ZI-data=1028  
+After Build - User command #1: fromelf --bin ".\obj\Modbus.axf" --output ".\obj\Modbus.bin"
+".\obj\Modbus.axf": Error: Q0122E: Could not open file '.\obj\Modbus.axf': No such file or directory
+Finished: 0 information, 0 warning and 1 error messages.
+After Build - User command #2: fromelf --text -c ".\obj\Modbus.axf" --output ".\obj\Modbus.txt"
+".\obj\Modbus.axf": Error: Q0122E: Could not open file '.\obj\Modbus.axf': No such file or directory
+Finished: 0 information, 0 warning and 1 error messages.
+".\Objects\Modbus.axf" - 0 Error(s), 3 Warning(s).
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

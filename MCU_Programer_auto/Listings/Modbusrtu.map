@@ -1,0 +1,981 @@
+Component: ARM Compiler 5.06 update 6 (build 750) Tool: armlink [4d35ed]
+
+==============================================================================
+
+Section Cross References
+
+    system_nuc100series.o(i.SystemCoreClockUpdate) refers to uidiv.o(.text) for __aeabi_uidivmod
+    system_nuc100series.o(i.SystemCoreClockUpdate) refers to system_nuc100series.o(.data) for .data
+    startup_nuc100series.o(RESET) refers to startup_nuc100series.o(STACK) for __initial_sp
+    startup_nuc100series.o(RESET) refers to startup_nuc100series.o(.text) for Reset_Handler
+    startup_nuc100series.o(RESET) refers to interrupt.o(i.GPCDEF_IRQHandler) for GPCDEF_IRQHandler
+    startup_nuc100series.o(RESET) refers to interrupt.o(i.TMR0_IRQHandler) for TMR0_IRQHandler
+    startup_nuc100series.o(RESET) refers to interrupt.o(i.TMR1_IRQHandler) for TMR1_IRQHandler
+    startup_nuc100series.o(RESET) refers to interrupt.o(i.TMR2_IRQHandler) for TMR2_IRQHandler
+    startup_nuc100series.o(RESET) refers to interrupt.o(i.TMR3_IRQHandler) for TMR3_IRQHandler
+    startup_nuc100series.o(RESET) refers to interrupt.o(i.UART02_IRQHandler) for UART02_IRQHandler
+    startup_nuc100series.o(.text) refers to system_nuc100series.o(i.SystemInit) for SystemInit
+    startup_nuc100series.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    main.o(i.main) refers to sys_init.o(i.SYS_Init) for SYS_Init
+    main.o(i.main) refers to init.o(i.Init_KEY) for Init_KEY
+    main.o(i.main) refers to control.o(i.Init_axits) for Init_axits
+    main.o(i.main) refers to petitmodbus.o(i.InitPetitModbus) for InitPetitModbus
+    main.o(i.main) refers to pc.o(i.SETUP_SYSTEM) for SETUP_SYSTEM
+    main.o(i.main) refers to pc.o(i.PC_SW) for PC_SW
+    sys_init.o(i.SYS_Init) refers to clk.o(i.CLK_EnableXtalRC) for CLK_EnableXtalRC
+    sys_init.o(i.SYS_Init) refers to clk.o(i.CLK_WaitClockReady) for CLK_WaitClockReady
+    sys_init.o(i.SYS_Init) refers to clk.o(i.CLK_SetCoreClock) for CLK_SetCoreClock
+    sys_init.o(i.SYS_Init) refers to clk.o(i.CLK_EnableModuleClock) for CLK_EnableModuleClock
+    sys_init.o(i.SYS_Init) refers to clk.o(i.CLK_SetModuleClock) for CLK_SetModuleClock
+    control.o(i.CLK_SysTickDelay) refers to system_nuc100series.o(.data) for CyclesPerUs
+    control.o(i.Calib_xyzr) refers to control.o(i.PUL_R2) for PUL_R2
+    control.o(i.Calib_xyzr) refers to control.o(i.Pause_all) for Pause_all
+    control.o(i.Calib_xyzr) refers to control.o(i.PUL_X) for PUL_X
+    control.o(i.Calib_xyzr) refers to control.o(i.PUL_Y) for PUL_Y
+    control.o(i.Calib_xyzr) refers to control.o(i.PUL_Z) for PUL_Z
+    control.o(i.Calib_xyzr) refers to control.o(i.PUL_R1) for PUL_R1
+    control.o(i.Calib_xyzr) refers to general.o(.bss) for Z
+    control.o(i.Calib_xyzr) refers to general.o(.bss) for Y
+    control.o(i.Calib_xyzr) refers to general.o(.bss) for X
+    control.o(i.Calib_xyzr) refers to general.o(.data) for _runR2
+    control.o(i.Calib_xyzr) refers to general.o(.data) for _runR1
+    control.o(i.Init_axits) refers to init.o(i.Init_Timer1) for Init_Timer1
+    control.o(i.Init_axits) refers to init.o(i.Init_Timer2) for Init_Timer2
+    control.o(i.Init_axits) refers to init.o(i.Init_Timer3) for Init_Timer3
+    control.o(i.Init_axits) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    control.o(i.Init_axits) refers to general.o(.bss) for Z
+    control.o(i.Init_axits) refers to general.o(.bss) for Y
+    control.o(i.Init_axits) refers to general.o(.bss) for X
+    control.o(i.Move_R1) refers to control.o(i.PUL_R1) for PUL_R1
+    control.o(i.Move_R1) refers to general.o(.data) for _coodhis_R1
+    control.o(i.Move_R2) refers to control.o(i.PUL_R2) for PUL_R2
+    control.o(i.Move_R2) refers to general.o(.data) for _coodhis_R2
+    control.o(i.Move_X) refers to control.o(i.PUL_X) for PUL_X
+    control.o(i.Move_X) refers to general.o(.bss) for X
+    control.o(i.Move_Y) refers to control.o(i.PUL_Y) for PUL_Y
+    control.o(i.Move_Y) refers to general.o(.bss) for Y
+    control.o(i.Move_Z) refers to control.o(i.PUL_Z) for PUL_Z
+    control.o(i.Move_Z) refers to general.o(.bss) for Z
+    control.o(i.ORGIN) refers to control.o(i.Pause_all) for Pause_all
+    control.o(i.ORGIN) refers to control.o(i.CLK_SysTickDelay) for CLK_SysTickDelay
+    control.o(i.ORGIN) refers to control.o(i.PUL_Z) for PUL_Z
+    control.o(i.ORGIN) refers to control.o(i.PUL_Y) for PUL_Y
+    control.o(i.ORGIN) refers to control.o(i.PUL_X) for PUL_X
+    control.o(i.ORGIN) refers to general.o(.bss) for Z
+    control.o(i.ORGIN) refers to general.o(.bss) for Y
+    control.o(i.ORGIN) refers to general.o(.bss) for X
+    control.o(i.ORGIN) refers to general.o(.data) for Z_scale_speed
+    control.o(i.ORGIN) refers to general.o(.data) for Y_scale_speed
+    control.o(i.ORGIN) refers to general.o(.data) for X_scale_speed
+    control.o(i.ORGIN) refers to general.o(.data) for _orgz_ed
+    control.o(i.ORGIN) refers to general.o(.data) for _ORG
+    control.o(i.PUL_R1) refers to general.o(.data) for _runR1
+    control.o(i.PUL_R1) refers to general.o(.data) for _PUL_R1
+    control.o(i.PUL_R2) refers to general.o(.data) for _runR2
+    control.o(i.PUL_R2) refers to general.o(.data) for _PUL_R2
+    control.o(i.PUL_X) refers to general.o(.bss) for X
+    control.o(i.PUL_Y) refers to general.o(.bss) for Y
+    control.o(i.PUL_Z) refers to general.o(.bss) for Z
+    control.o(i.SET_SPEED) refers to general.o(.data) for _Auto_Maunual
+    control.o(i.SET_SPEED) refers to general.o(.data) for Auto_speed
+    control.o(i.SET_SPEED) refers to general.o(.data) for Z_scale_speed
+    control.o(i.SET_SPEED) refers to general.o(.data) for Y_scale_speed
+    control.o(i.SET_SPEED) refers to general.o(.data) for X_scale_speed
+    pc.o(i.PC_SW) refers to petitmodbus.o(i.ProcessPetitModbus) for ProcessPetitModbus
+    pc.o(i.PC_SW) refers to control.o(i.ORGIN) for ORGIN
+    pc.o(i.PC_SW) refers to control.o(i.SET_SPEED) for SET_SPEED
+    pc.o(i.PC_SW) refers to control.o(i.Move_X) for Move_X
+    pc.o(i.PC_SW) refers to control.o(i.Move_Y) for Move_Y
+    pc.o(i.PC_SW) refers to control.o(i.Move_Z) for Move_Z
+    pc.o(i.PC_SW) refers to control.o(i.Calib_xyzr) for Calib_xyzr
+    pc.o(i.PC_SW) refers to control.o(i.PUL_R1) for PUL_R1
+    pc.o(i.PC_SW) refers to control.o(i.Signal_1) for Signal_1
+    pc.o(i.PC_SW) refers to control.o(i.Signal_2) for Signal_2
+    pc.o(i.PC_SW) refers to general.o(.bss) for X
+    pc.o(i.PC_SW) refers to petitregconstant.o(.bss) for PetitRegisters
+    pc.o(i.PC_SW) refers to general.o(.bss) for Y
+    pc.o(i.PC_SW) refers to general.o(.bss) for Z
+    pc.o(i.PC_SW) refers to general.o(.bss) for R1
+    pc.o(i.PC_SW) refers to general.o(.bss) for R2
+    pc.o(i.PC_SW) refers to general.o(.data) for _ORG
+    pc.o(i.PC_SW) refers to general.o(.data) for _Auto_Maunual
+    pc.o(i.PC_SW) refers to general.o(.data) for Auto_speed
+    pc.o(i.PC_SW) refers to general.o(.data) for _reqR1
+    pc.o(i.PC_SW) refers to general.o(.data) for _coodhis_R1
+    pc.o(i.PC_SW) refers to general.o(.data) for _ups
+    pc.o(i.PC_SW) refers to general.o(.data) for _truc
+    pc.o(i.PC_SW) refers to general.o(.data) for CAM_CHOICE
+    pc.o(i.SETUP_SYSTEM) refers to control.o(i.ORGIN) for ORGIN
+    pc.o(i.SETUP_SYSTEM) refers to control.o(i.Signal_1) for Signal_1
+    pc.o(i.SETUP_SYSTEM) refers to general.o(.bss) for X
+    pc.o(i.SETUP_SYSTEM) refers to general.o(.bss) for Y
+    pc.o(i.SETUP_SYSTEM) refers to general.o(.bss) for Z
+    pc.o(i.SETUP_SYSTEM) refers to general.o(.data) for _ORG
+    pc.o(i.SETUP_SYSTEM) refers to petitregconstant.o(.bss) for PetitRegisters
+    clk.o(i.CLK_DisableCKO) refers to clk.o(i.CLK_DisableModuleClock) for CLK_DisableModuleClock
+    clk.o(i.CLK_DisableModuleClock) refers to clk.o(.constdata) for .constdata
+    clk.o(i.CLK_EnableCKO) refers to clk.o(i.CLK_EnableModuleClock) for CLK_EnableModuleClock
+    clk.o(i.CLK_EnableCKO) refers to clk.o(i.CLK_SetModuleClock) for CLK_SetModuleClock
+    clk.o(i.CLK_EnableModuleClock) refers to clk.o(.constdata) for .constdata
+    clk.o(i.CLK_EnablePLL) refers to clk.o(i.CLK_WaitClockReady) for CLK_WaitClockReady
+    clk.o(i.CLK_EnablePLL) refers to uidiv.o(.text) for __aeabi_uidivmod
+    clk.o(i.CLK_GetCPUFreq) refers to system_nuc100series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    clk.o(i.CLK_GetCPUFreq) refers to system_nuc100series.o(.data) for SystemCoreClock
+    clk.o(i.CLK_GetHCLKFreq) refers to system_nuc100series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    clk.o(i.CLK_GetHCLKFreq) refers to system_nuc100series.o(.data) for SystemCoreClock
+    clk.o(i.CLK_GetPCLKFreq) refers to system_nuc100series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    clk.o(i.CLK_GetPCLKFreq) refers to system_nuc100series.o(.data) for SystemCoreClock
+    clk.o(i.CLK_SetCoreClock) refers to clk.o(i.CLK_EnablePLL) for CLK_EnablePLL
+    clk.o(i.CLK_SetCoreClock) refers to clk.o(i.CLK_SetHCLK) for CLK_SetHCLK
+    clk.o(i.CLK_SetHCLK) refers to system_nuc100series.o(i.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    clk.o(i.CLK_SetModuleClock) refers to clk.o(.constdata) for .constdata
+    timer.o(i.TIMER_Delay) refers to timer.o(i.TIMER_GetModuleClock) for TIMER_GetModuleClock
+    timer.o(i.TIMER_Delay) refers to uidiv.o(.text) for __aeabi_uidivmod
+    timer.o(i.TIMER_Delay) refers to system_nuc100series.o(.data) for SystemCoreClock
+    timer.o(i.TIMER_GetModuleClock) refers to memcpya.o(.text) for __aeabi_memcpy4
+    timer.o(i.TIMER_GetModuleClock) refers to timer.o(.constdata) for .constdata
+    timer.o(i.TIMER_GetModuleClock) refers to system_nuc100series.o(.data) for SystemCoreClock
+    timer.o(i.TIMER_Open) refers to timer.o(i.TIMER_GetModuleClock) for TIMER_GetModuleClock
+    timer.o(i.TIMER_Open) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.CLK_GetPLLClockFreq) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_Open) refers to uart.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    uart.o(i.UART_Open) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_Open) refers to uart.o(.constdata) for .constdata
+    uart.o(i.UART_SelectIrDAMode) refers to uart.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    uart.o(i.UART_SelectIrDAMode) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_SelectIrDAMode) refers to uart.o(.constdata) for .constdata
+    uart.o(i.UART_SetLine_Config) refers to uart.o(i.CLK_GetPLLClockFreq) for CLK_GetPLLClockFreq
+    uart.o(i.UART_SetLine_Config) refers to uidiv.o(.text) for __aeabi_uidivmod
+    uart.o(i.UART_SetLine_Config) refers to uart.o(.constdata) for .constdata
+    init.o(i.Init_KEY) refers to gpio.o(i.GPIO_SetMode) for GPIO_SetMode
+    init.o(i.Init_KEY) refers to gpio.o(i.GPIO_EnableInt) for GPIO_EnableInt
+    init.o(i.Init_KEY) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.Init_Timer0) refers to clk.o(i.CLK_EnableModuleClock) for CLK_EnableModuleClock
+    init.o(i.Init_Timer0) refers to timer.o(i.TIMER_Open) for TIMER_Open
+    init.o(i.Init_Timer0) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.Init_Timer1) refers to timer.o(i.TIMER_Open) for TIMER_Open
+    init.o(i.Init_Timer1) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.Init_Timer2) refers to timer.o(i.TIMER_Open) for TIMER_Open
+    init.o(i.Init_Timer2) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.Init_Timer3) refers to timer.o(i.TIMER_Open) for TIMER_Open
+    init.o(i.Init_Timer3) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    init.o(i.Init_UART0) refers to uart.o(i.UART_Open) for UART_Open
+    init.o(i.Init_UART0) refers to init.o(i.NVIC_EnableIRQ) for NVIC_EnableIRQ
+    interrupt.o(i.GPCDEF_IRQHandler) refers to general.o(.bss) for Y
+    interrupt.o(i.GPCDEF_IRQHandler) refers to general.o(.bss) for X
+    interrupt.o(i.GPCDEF_IRQHandler) refers to general.o(.bss) for Z
+    interrupt.o(i.TMR0_IRQHandler) refers to petitmodbusport.o(i.PetitModBus_TimerValues) for PetitModBus_TimerValues
+    interrupt.o(i.TMR0_IRQHandler) refers to general.o(.data) for Timer1_Tick_Counter
+    interrupt.o(i.TMR1_IRQHandler) refers to general.o(.bss) for X
+    interrupt.o(i.TMR1_IRQHandler) refers to general.o(.data) for _ORG
+    interrupt.o(i.TMR1_IRQHandler) refers to general.o(.data) for X_scale
+    interrupt.o(i.TMR1_IRQHandler) refers to general.o(.data) for X_scale_speed
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.bss) for Z
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for _ORG
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for Z_scale
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for Z_scale_speed
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for _PUL_R1
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for _runR1
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for R1_scale
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for _RFR1
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for show_cood_R1
+    interrupt.o(i.TMR2_IRQHandler) refers to general.o(.data) for _runR2
+    interrupt.o(i.TMR3_IRQHandler) refers to general.o(.bss) for Y
+    interrupt.o(i.TMR3_IRQHandler) refers to general.o(.data) for _ORG
+    interrupt.o(i.TMR3_IRQHandler) refers to general.o(.data) for Y_scale
+    interrupt.o(i.TMR3_IRQHandler) refers to general.o(.data) for Y_scale_speed
+    interrupt.o(i.UART02_IRQHandler) refers to petitmodbusport.o(i.ReceiveInterrupt) for ReceiveInterrupt
+    petitmodbus.o(i.CheckPetitModbusBufferComplete) refers to petitmodbusport.o(.data) for PetitReceiveCounter
+    petitmodbus.o(i.CheckPetitModbusBufferComplete) refers to petitmodbusport.o(.bss) for PetitReceiveBuffer
+    petitmodbus.o(i.CheckPetitModbusBufferComplete) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters) refers to petitmodbus.o(i.HandlePetitModbusError) for HandlePetitModbusError
+    petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters) refers to petitmodbus.o(i.PetitSendMessage) for PetitSendMessage
+    petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters) refers to petitregconstant.o(.bss) for PetitRegisters
+    petitmodbus.o(i.HandlePetitModbusError) refers to petitmodbus.o(i.PetitSendMessage) for PetitSendMessage
+    petitmodbus.o(i.HandlePetitModbusError) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.HandlePetitModbusError) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters) refers to petitmodbus.o(i.HandlePetitModbusError) for HandlePetitModbusError
+    petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters) refers to petitmodbus.o(i.PetitSendMessage) for PetitSendMessage
+    petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters) refers to petitregconstant.o(.bss) for PetitRegisters
+    petitmodbus.o(i.HandlePetitModbusWriteSingleRegister) refers to petitmodbus.o(i.HandlePetitModbusError) for HandlePetitModbusError
+    petitmodbus.o(i.HandlePetitModbusWriteSingleRegister) refers to petitmodbus.o(i.PetitSendMessage) for PetitSendMessage
+    petitmodbus.o(i.HandlePetitModbusWriteSingleRegister) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.HandlePetitModbusWriteSingleRegister) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.HandlePetitModbusWriteSingleRegister) refers to petitregconstant.o(.bss) for PetitRegisters
+    petitmodbus.o(i.InitPetitModbus) refers to petitmodbusport.o(i.PetitModBus_UART_Initialise) for PetitModBus_UART_Initialise
+    petitmodbus.o(i.InitPetitModbus) refers to petitmodbusport.o(i.PetitModBus_TIMER_Initialise) for PetitModBus_TIMER_Initialise
+    petitmodbus.o(i.InitPetitModbus) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.InitPetitModbus) refers to petitregconstant.o(.bss) for PetitRegisters
+    petitmodbus.o(i.PetitSendMessage) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.Petit_CheckRxTimeout) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.Petit_CheckRxTimeout) refers to petitmodbusport.o(.data) for PetitReceiveCounter
+    petitmodbus.o(i.Petit_DoSlaveTX) refers to petitmodbusport.o(i.PetitModBus_UART_String) for PetitModBus_UART_String
+    petitmodbus.o(i.Petit_DoSlaveTX) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.Petit_DoSlaveTX) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.Petit_RxDataAvailable) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbus.o(i.CheckPetitModbusBufferComplete) for CheckPetitModbusBufferComplete
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbus.o(i.Petit_CRC16) for Petit_CRC16
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbus.o(i.Petit_CheckRxTimeout) for Petit_CheckRxTimeout
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbusport.o(.bss) for PetitReceiveBuffer
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.Petit_RxRTU) refers to petitmodbusport.o(.data) for PetitReceiveCounter
+    petitmodbus.o(i.Petit_TxRTU) refers to petitmodbus.o(i.Petit_CRC16) for Petit_CRC16
+    petitmodbus.o(i.Petit_TxRTU) refers to petitmodbus.o(i.Petit_DoSlaveTX) for Petit_DoSlaveTX
+    petitmodbus.o(i.Petit_TxRTU) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.Petit_TxRTU) refers to petitmodbus.o(.bss) for .bss
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.Petit_TxRTU) for Petit_TxRTU
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.Petit_RxRTU) for Petit_RxRTU
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.Petit_RxDataAvailable) for Petit_RxDataAvailable
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.HandlePetitModbusError) for HandlePetitModbusError
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters) for HandlePetitModbusReadHoldingRegisters
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.HandlePetitModbusWriteSingleRegister) for HandlePetitModbusWriteSingleRegister
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters) for HandleMPetitodbusWriteMultipleRegisters
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(.data) for .data
+    petitmodbus.o(i.ProcessPetitModbus) refers to petitmodbus.o(.bss) for .bss
+    petitmodbusport.o(i.PetitModBus_TIMER_Initialise) refers to init.o(i.Init_Timer0) for Init_Timer0
+    petitmodbusport.o(i.PetitModBus_TimerValues) refers to petitmodbus.o(.data) for PetitModbusTimerValue
+    petitmodbusport.o(i.PetitModBus_UART_Initialise) refers to init.o(i.Init_UART0) for Init_UART0
+    petitmodbusport.o(i.PetitModBus_UART_String) refers to petitmodbusport.o(i.PetitModBus_UART_Putch) for PetitModBus_UART_Putch
+    petitmodbusport.o(i.ReceiveInterrupt) refers to petitmodbusport.o(.bss) for .bss
+    petitmodbusport.o(i.ReceiveInterrupt) refers to petitmodbusport.o(.data) for .data
+    petitmodbusport.o(i.ReceiveInterrupt) refers to petitmodbus.o(.data) for PetitModbusTimerValue
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_nuc100series.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_nuc100series.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to main.o(i.main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to main.o(i.main) for main
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing system_nuc100series.o(.rev16_text), (4 bytes).
+    Removing system_nuc100series.o(.revsh_text), (4 bytes).
+    Removing startup_nuc100series.o(HEAP), (0 bytes).
+    Removing main.o(.rev16_text), (4 bytes).
+    Removing main.o(.revsh_text), (4 bytes).
+    Removing sys_init.o(.rev16_text), (4 bytes).
+    Removing sys_init.o(.revsh_text), (4 bytes).
+    Removing control.o(.rev16_text), (4 bytes).
+    Removing control.o(.revsh_text), (4 bytes).
+    Removing control.o(i.Move_R1), (48 bytes).
+    Removing control.o(i.Move_R2), (40 bytes).
+    Removing pc.o(.rev16_text), (4 bytes).
+    Removing pc.o(.revsh_text), (4 bytes).
+    Removing clk.o(.rev16_text), (4 bytes).
+    Removing clk.o(.revsh_text), (4 bytes).
+    Removing clk.o(i.CLK_DisableCKO), (16 bytes).
+    Removing clk.o(i.CLK_DisableModuleClock), (48 bytes).
+    Removing clk.o(i.CLK_DisablePLL), (16 bytes).
+    Removing clk.o(i.CLK_DisableXtalRC), (16 bytes).
+    Removing clk.o(i.CLK_EnableCKO), (44 bytes).
+    Removing clk.o(i.CLK_GetCPUFreq), (16 bytes).
+    Removing clk.o(i.CLK_GetHCLKFreq), (16 bytes).
+    Removing clk.o(i.CLK_GetHXTFreq), (20 bytes).
+    Removing clk.o(i.CLK_GetLXTFreq), (24 bytes).
+    Removing clk.o(i.CLK_GetPCLKFreq), (16 bytes).
+    Removing clk.o(i.CLK_Idle), (32 bytes).
+    Removing clk.o(i.CLK_PowerDown), (36 bytes).
+    Removing clk.o(i.CLK_SetSysTickClockSrc), (20 bytes).
+    Removing gpio.o(.rev16_text), (4 bytes).
+    Removing gpio.o(.revsh_text), (4 bytes).
+    Removing gpio.o(i.GPIO_DisableInt), (28 bytes).
+    Removing sys.o(.rev16_text), (4 bytes).
+    Removing sys.o(.revsh_text), (4 bytes).
+    Removing sys.o(i.SYS_ClearResetSrc), (12 bytes).
+    Removing sys.o(i.SYS_DisableBOD), (14 bytes).
+    Removing sys.o(i.SYS_EnableBOD), (36 bytes).
+    Removing sys.o(i.SYS_GetBODStatus), (12 bytes).
+    Removing sys.o(i.SYS_GetResetSrc), (8 bytes).
+    Removing sys.o(i.SYS_IsRegLocked), (16 bytes).
+    Removing sys.o(i.SYS_ReadPDID), (8 bytes).
+    Removing sys.o(i.SYS_ResetCPU), (14 bytes).
+    Removing sys.o(i.SYS_ResetChip), (14 bytes).
+    Removing sys.o(i.SYS_ResetModule), (26 bytes).
+    Removing timer.o(.rev16_text), (4 bytes).
+    Removing timer.o(.revsh_text), (4 bytes).
+    Removing timer.o(i.TIMER_Close), (8 bytes).
+    Removing timer.o(i.TIMER_Delay), (196 bytes).
+    Removing timer.o(i.TIMER_DisableCapture), (10 bytes).
+    Removing timer.o(i.TIMER_DisableEventCounter), (12 bytes).
+    Removing timer.o(i.TIMER_EnableCapture), (20 bytes).
+    Removing timer.o(i.TIMER_EnableEventCounter), (22 bytes).
+    Removing uart.o(.rev16_text), (4 bytes).
+    Removing uart.o(.revsh_text), (4 bytes).
+    Removing uart.o(i.UART_ClearIntFlag), (56 bytes).
+    Removing uart.o(i.UART_Close), (6 bytes).
+    Removing uart.o(i.UART_DisableFlowCtrl), (12 bytes).
+    Removing uart.o(i.UART_DisableInt), (48 bytes).
+    Removing uart.o(i.UART_EnableFlowCtrl), (30 bytes).
+    Removing uart.o(i.UART_EnableInt), (48 bytes).
+    Removing uart.o(i.UART_Read), (44 bytes).
+    Removing uart.o(i.UART_SelectIrDAMode), (132 bytes).
+    Removing uart.o(i.UART_SelectLINMode), (24 bytes).
+    Removing uart.o(i.UART_SelectRS485Mode), (32 bytes).
+    Removing uart.o(i.UART_SetLine_Config), (128 bytes).
+    Removing uart.o(i.UART_SetTimeoutCnt), (22 bytes).
+    Removing uart.o(i.UART_Write), (44 bytes).
+    Removing general.o(.rev16_text), (4 bytes).
+    Removing general.o(.revsh_text), (4 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (4 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing general.o(.data), (1 bytes).
+    Removing init.o(.rev16_text), (4 bytes).
+    Removing init.o(.revsh_text), (4 bytes).
+    Removing interrupt.o(.rev16_text), (4 bytes).
+    Removing interrupt.o(.revsh_text), (4 bytes).
+    Removing petitmodbusport.o(.rev16_text), (4 bytes).
+    Removing petitmodbusport.o(.revsh_text), (4 bytes).
+
+106 unused section(s) (total 1679 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    RESET                                    0x00000000   Section      192  startup_nuc100series.o(RESET)
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ..\Library\Device\Nuvoton\NUC100Series\Source\ARM\startup_NUC100Series.s 0x00000000   Number         0  startup_nuc100series.o ABSOLUTE
+    ..\Library\Device\Nuvoton\NUC100Series\Source\system_NUC100Series.c 0x00000000   Number         0  system_nuc100series.o ABSOLUTE
+    ..\Library\NuMakerLib\Source\SYS_init.c  0x00000000   Number         0  sys_init.o ABSOLUTE
+    ..\Library\StdDriver\src\clk.c           0x00000000   Number         0  clk.o ABSOLUTE
+    ..\Library\StdDriver\src\gpio.c          0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\Library\StdDriver\src\sys.c           0x00000000   Number         0  sys.o ABSOLUTE
+    ..\Library\StdDriver\src\timer.c         0x00000000   Number         0  timer.o ABSOLUTE
+    ..\Library\StdDriver\src\uart.c          0x00000000   Number         0  uart.o ABSOLUTE
+    ..\\Library\\Device\\Nuvoton\\NUC100Series\\Source\\system_NUC100Series.c 0x00000000   Number         0  system_nuc100series.o ABSOLUTE
+    ..\\Library\\NuMakerLib\\Source\\SYS_init.c 0x00000000   Number         0  sys_init.o ABSOLUTE
+    ..\\Library\\StdDriver\\src\\clk.c       0x00000000   Number         0  clk.o ABSOLUTE
+    ..\\Library\\StdDriver\\src\\gpio.c      0x00000000   Number         0  gpio.o ABSOLUTE
+    ..\\Library\\StdDriver\\src\\sys.c       0x00000000   Number         0  sys.o ABSOLUTE
+    ..\\Library\\StdDriver\\src\\timer.c     0x00000000   Number         0  timer.o ABSOLUTE
+    ..\\Library\\StdDriver\\src\\uart.c      0x00000000   Number         0  uart.o ABSOLUTE
+    General.c                                0x00000000   Number         0  general.o ABSOLUTE
+    General.c                                0x00000000   Number         0  general.o ABSOLUTE
+    Init.c                                   0x00000000   Number         0  init.o ABSOLUTE
+    Init.c                                   0x00000000   Number         0  init.o ABSOLUTE
+    Interrupt.c                              0x00000000   Number         0  interrupt.o ABSOLUTE
+    Interrupt.c                              0x00000000   Number         0  interrupt.o ABSOLUTE
+    PC.c                                     0x00000000   Number         0  pc.o ABSOLUTE
+    PC.c                                     0x00000000   Number         0  pc.o ABSOLUTE
+    PetitModbus.c                            0x00000000   Number         0  petitmodbus.o ABSOLUTE
+    PetitModbusPort.c                        0x00000000   Number         0  petitmodbusport.o ABSOLUTE
+    PetitModbusPort.c                        0x00000000   Number         0  petitmodbusport.o ABSOLUTE
+    PetitRegConstant.c                       0x00000000   Number         0  petitregconstant.o ABSOLUTE
+    control.c                                0x00000000   Number         0  control.o ABSOLUTE
+    control.c                                0x00000000   Number         0  control.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    .ARM.Collect$$$$00000000                 0x000000c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000000c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000000c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000000c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000000c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000000c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000000d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000000d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000000d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000000d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000000d4   Section       76  startup_nuc100series.o(.text)
+    Default_Handler                          0x000000ff   Thumb Code     2  startup_nuc100series.o(.text)
+    .text                                    0x00000120   Section        0  uidiv.o(.text)
+    .text                                    0x0000014c   Section        0  memcpya.o(.text)
+    .text                                    0x00000170   Section       36  init.o(.text)
+    i.CLK_EnableModuleClock                  0x00000194   Section        0  clk.o(i.CLK_EnableModuleClock)
+    i.CLK_EnablePLL                          0x000001c4   Section        0  clk.o(i.CLK_EnablePLL)
+    i.CLK_EnableXtalRC                       0x0000035c   Section        0  clk.o(i.CLK_EnableXtalRC)
+    i.CLK_GetPLLClockFreq                    0x0000036c   Section        0  uart.o(i.CLK_GetPLLClockFreq)
+    CLK_GetPLLClockFreq                      0x0000036d   Thumb Code    70  uart.o(i.CLK_GetPLLClockFreq)
+    i.CLK_SetCoreClock                       0x000003c4   Section        0  clk.o(i.CLK_SetCoreClock)
+    i.CLK_SetHCLK                            0x0000043c   Section        0  clk.o(i.CLK_SetHCLK)
+    i.CLK_SetModuleClock                     0x00000484   Section        0  clk.o(i.CLK_SetModuleClock)
+    i.CLK_SysTickDelay                       0x00000550   Section        0  control.o(i.CLK_SysTickDelay)
+    CLK_SysTickDelay                         0x00000551   Thumb Code    28  control.o(i.CLK_SysTickDelay)
+    i.CLK_WaitClockReady                     0x00000574   Section        0  clk.o(i.CLK_WaitClockReady)
+    i.Calib_xyzr                             0x000005a0   Section        0  control.o(i.Calib_xyzr)
+    i.CheckPetitModbusBufferComplete         0x00000678   Section        0  petitmodbus.o(i.CheckPetitModbusBufferComplete)
+    i.GPCDEF_IRQHandler                      0x000006f0   Section        0  interrupt.o(i.GPCDEF_IRQHandler)
+    i.GPIO_EnableInt                         0x0000078c   Section        0  gpio.o(i.GPIO_EnableInt)
+    i.GPIO_SetMode                           0x000007a6   Section        0  gpio.o(i.GPIO_SetMode)
+    i.HandleMPetitodbusWriteMultipleRegisters 0x000007d0   Section        0  petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters)
+    i.HandlePetitModbusError                 0x0000084c   Section        0  petitmodbus.o(i.HandlePetitModbusError)
+    i.HandlePetitModbusReadHoldingRegisters  0x00000874   Section        0  petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters)
+    i.HandlePetitModbusWriteSingleRegister   0x000008f0   Section        0  petitmodbus.o(i.HandlePetitModbusWriteSingleRegister)
+    i.InitPetitModbus                        0x00000950   Section        0  petitmodbus.o(i.InitPetitModbus)
+    i.Init_KEY                               0x00000970   Section        0  init.o(i.Init_KEY)
+    i.Init_Timer0                            0x00000a2c   Section        0  init.o(i.Init_Timer0)
+    i.Init_Timer1                            0x00000a68   Section        0  init.o(i.Init_Timer1)
+    i.Init_Timer2                            0x00000a90   Section        0  init.o(i.Init_Timer2)
+    i.Init_Timer3                            0x00000ab8   Section        0  init.o(i.Init_Timer3)
+    i.Init_UART0                             0x00000ae0   Section        0  init.o(i.Init_UART0)
+    i.Init_axits                             0x00000b04   Section        0  control.o(i.Init_axits)
+    i.Move_X                                 0x00000b88   Section        0  control.o(i.Move_X)
+    i.Move_Y                                 0x00000bbc   Section        0  control.o(i.Move_Y)
+    i.Move_Z                                 0x00000bf0   Section        0  control.o(i.Move_Z)
+    i.NVIC_EnableIRQ                         0x00000c24   Section        0  init.o(i.NVIC_EnableIRQ)
+    NVIC_EnableIRQ                           0x00000c25   Thumb Code    14  init.o(i.NVIC_EnableIRQ)
+    i.ORGIN                                  0x00000c38   Section        0  control.o(i.ORGIN)
+    i.PC_SW                                  0x00000da0   Section        0  pc.o(i.PC_SW)
+    i.PUL_R1                                 0x00000efc   Section        0  control.o(i.PUL_R1)
+    i.PUL_R2                                 0x00000f28   Section        0  control.o(i.PUL_R2)
+    i.PUL_X                                  0x00000f54   Section        0  control.o(i.PUL_X)
+    i.PUL_Y                                  0x00000f80   Section        0  control.o(i.PUL_Y)
+    i.PUL_Z                                  0x00000fac   Section        0  control.o(i.PUL_Z)
+    i.Pause_all                              0x00000fd8   Section        0  control.o(i.Pause_all)
+    i.PetitModBus_TIMER_Initialise           0x00001000   Section        0  petitmodbusport.o(i.PetitModBus_TIMER_Initialise)
+    i.PetitModBus_TimerValues                0x00001008   Section        0  petitmodbusport.o(i.PetitModBus_TimerValues)
+    i.PetitModBus_UART_Initialise            0x00001018   Section        0  petitmodbusport.o(i.PetitModBus_UART_Initialise)
+    i.PetitModBus_UART_Putch                 0x00001020   Section        0  petitmodbusport.o(i.PetitModBus_UART_Putch)
+    i.PetitModBus_UART_String                0x00001030   Section        0  petitmodbusport.o(i.PetitModBus_UART_String)
+    i.PetitSendMessage                       0x0000104c   Section        0  petitmodbus.o(i.PetitSendMessage)
+    i.Petit_CRC16                            0x00001068   Section        0  petitmodbus.o(i.Petit_CRC16)
+    i.Petit_CheckRxTimeout                   0x0000108c   Section        0  petitmodbus.o(i.Petit_CheckRxTimeout)
+    i.Petit_DoSlaveTX                        0x000010ac   Section        0  petitmodbus.o(i.Petit_DoSlaveTX)
+    i.Petit_RxDataAvailable                  0x000010c8   Section        0  petitmodbus.o(i.Petit_RxDataAvailable)
+    i.Petit_RxRTU                            0x000010d8   Section        0  petitmodbus.o(i.Petit_RxRTU)
+    i.Petit_TxRTU                            0x0000119c   Section        0  petitmodbus.o(i.Petit_TxRTU)
+    i.ProcessPetitModbus                     0x00001220   Section        0  petitmodbus.o(i.ProcessPetitModbus)
+    i.ReceiveInterrupt                       0x00001274   Section        0  petitmodbusport.o(i.ReceiveInterrupt)
+    i.SETUP_SYSTEM                           0x000012a0   Section        0  pc.o(i.SETUP_SYSTEM)
+    i.SET_SPEED                              0x0000132c   Section        0  control.o(i.SET_SPEED)
+    i.SYS_Init                               0x00001360   Section        0  sys_init.o(i.SYS_Init)
+    i.Signal_1                               0x00001428   Section        0  control.o(i.Signal_1)
+    i.Signal_2                               0x0000143c   Section        0  control.o(i.Signal_2)
+    i.SystemCoreClockUpdate                  0x0000144c   Section        0  system_nuc100series.o(i.SystemCoreClockUpdate)
+    i.SystemInit                             0x000014dc   Section        0  system_nuc100series.o(i.SystemInit)
+    i.TIMER_GetModuleClock                   0x000014e0   Section        0  timer.o(i.TIMER_GetModuleClock)
+    i.TIMER_Open                             0x00001548   Section        0  timer.o(i.TIMER_Open)
+    i.TMR0_IRQHandler                        0x000015a8   Section        0  interrupt.o(i.TMR0_IRQHandler)
+    i.TMR1_IRQHandler                        0x000015c8   Section        0  interrupt.o(i.TMR1_IRQHandler)
+    i.TMR2_IRQHandler                        0x00001664   Section        0  interrupt.o(i.TMR2_IRQHandler)
+    i.TMR3_IRQHandler                        0x00001760   Section        0  interrupt.o(i.TMR3_IRQHandler)
+    i.UART02_IRQHandler                      0x000017fc   Section        0  interrupt.o(i.UART02_IRQHandler)
+    i.UART_Open                              0x00001814   Section        0  uart.o(i.UART_Open)
+    i.__scatterload_copy                     0x0000189c   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x000018aa   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x000018ac   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.main                                   0x000018ba   Section        0  main.o(i.main)
+    .constdata                               0x000018d8   Section       56  clk.o(.constdata)
+    .constdata                               0x00001910   Section       32  timer.o(.constdata)
+    .constdata                               0x00001930   Section       48  uart.o(.constdata)
+    .data                                    0x20000000   Section       44  system_nuc100series.o(.data)
+    .data                                    0x2000002c   Section        1  general.o(.data)
+    .data                                    0x20000030   Section        4  general.o(.data)
+    .data                                    0x20000034   Section        4  general.o(.data)
+    .data                                    0x20000038   Section        1  general.o(.data)
+    .data                                    0x20000039   Section        1  general.o(.data)
+    .data                                    0x2000003c   Section        4  general.o(.data)
+    .data                                    0x20000040   Section        4  general.o(.data)
+    .data                                    0x20000044   Section        4  general.o(.data)
+    .data                                    0x20000048   Section        1  general.o(.data)
+    .data                                    0x20000049   Section        1  general.o(.data)
+    .data                                    0x2000004a   Section        1  general.o(.data)
+    .data                                    0x2000004b   Section        1  general.o(.data)
+    .data                                    0x2000004c   Section        1  general.o(.data)
+    .data                                    0x20000050   Section        4  general.o(.data)
+    .data                                    0x20000054   Section        1  general.o(.data)
+    .data                                    0x20000055   Section        1  general.o(.data)
+    .data                                    0x20000056   Section        1  general.o(.data)
+    .data                                    0x20000057   Section        1  general.o(.data)
+    .data                                    0x20000058   Section        1  general.o(.data)
+    .data                                    0x20000059   Section        1  general.o(.data)
+    .data                                    0x2000005c   Section        4  general.o(.data)
+    .data                                    0x20000060   Section        2  general.o(.data)
+    .data                                    0x20000062   Section        1  general.o(.data)
+    .data                                    0x20000064   Section       24  petitmodbus.o(.data)
+    .data                                    0x2000007c   Section        1  petitmodbusport.o(.data)
+    .bss                                     0x20000080   Section       28  general.o(.bss)
+    .bss                                     0x2000009c   Section       28  general.o(.bss)
+    .bss                                     0x200000b8   Section       28  general.o(.bss)
+    .bss                                     0x200000d4   Section       28  general.o(.bss)
+    .bss                                     0x200000f0   Section       28  general.o(.bss)
+    .bss                                     0x2000010c   Section      224  petitmodbus.o(.bss)
+    .bss                                     0x200001ec   Section       72  petitmodbusport.o(.bss)
+    .bss                                     0x20000234   Section       62  petitregconstant.o(.bss)
+    STACK                                    0x20000278   Section     1024  startup_nuc100series.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$USESV6$~STKCKD$USESV7$~SHL$OSPACE$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __ARM_use_no_argv                        0x00000000   Number         0  main.o ABSOLUTE
+    __Vectors                                0x00000000   Data           4  startup_nuc100series.o(RESET)
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __main                                   0x000000c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000000c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000000c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000000c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000000c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000000c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000000c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000000d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000000d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000000d5   Thumb Code    32  startup_nuc100series.o(.text)
+    NMI_Handler                              0x000000f5   Thumb Code     2  startup_nuc100series.o(.text)
+    HardFault_Handler                        0x000000f7   Thumb Code     2  startup_nuc100series.o(.text)
+    SVC_Handler                              0x000000f9   Thumb Code     2  startup_nuc100series.o(.text)
+    PendSV_Handler                           0x000000fb   Thumb Code     2  startup_nuc100series.o(.text)
+    SysTick_Handler                          0x000000fd   Thumb Code     2  startup_nuc100series.o(.text)
+    ACMP_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    ADC_IRQHandler                           0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    BOD_IRQHandler                           0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    CAN0_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    CAN1_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    EINT0_IRQHandler                         0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    EINT1_IRQHandler                         0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    GPAB_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    I2C0_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    I2C1_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    I2S_IRQHandler                           0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    PDMA_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    PS2_IRQHandler                           0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    PWM0_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    PWM1_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    PWRWU_IRQHandler                         0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    RTC_IRQHandler                           0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    SC012_IRQHandler                         0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    SPI0_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    SPI1_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    SPI2_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    SPI3_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    UART1_IRQHandler                         0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    USBD_IRQHandler                          0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    WDT_IRQHandler                           0x000000ff   Thumb Code     0  startup_nuc100series.o(.text)
+    __aeabi_uidiv                            0x00000121   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00000121   Thumb Code    44  uidiv.o(.text)
+    __aeabi_memcpy                           0x0000014d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000014d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000014d   Thumb Code     0  memcpya.o(.text)
+    __scatterload                            0x00000171   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00000171   Thumb Code     0  init.o(.text)
+    CLK_EnableModuleClock                    0x00000195   Thumb Code    40  clk.o(i.CLK_EnableModuleClock)
+    CLK_EnablePLL                            0x000001c5   Thumb Code   348  clk.o(i.CLK_EnablePLL)
+    CLK_EnableXtalRC                         0x0000035d   Thumb Code    10  clk.o(i.CLK_EnableXtalRC)
+    CLK_SetCoreClock                         0x000003c5   Thumb Code   112  clk.o(i.CLK_SetCoreClock)
+    CLK_SetHCLK                              0x0000043d   Thumb Code    66  clk.o(i.CLK_SetHCLK)
+    CLK_SetModuleClock                       0x00000485   Thumb Code   180  clk.o(i.CLK_SetModuleClock)
+    CLK_WaitClockReady                       0x00000575   Thumb Code    34  clk.o(i.CLK_WaitClockReady)
+    Calib_xyzr                               0x000005a1   Thumb Code   186  control.o(i.Calib_xyzr)
+    CheckPetitModbusBufferComplete           0x00000679   Thumb Code   106  petitmodbus.o(i.CheckPetitModbusBufferComplete)
+    GPCDEF_IRQHandler                        0x000006f1   Thumb Code   130  interrupt.o(i.GPCDEF_IRQHandler)
+    GPIO_EnableInt                           0x0000078d   Thumb Code    26  gpio.o(i.GPIO_EnableInt)
+    GPIO_SetMode                             0x000007a7   Thumb Code    40  gpio.o(i.GPIO_SetMode)
+    HandleMPetitodbusWriteMultipleRegisters  0x000007d1   Thumb Code   112  petitmodbus.o(i.HandleMPetitodbusWriteMultipleRegisters)
+    HandlePetitModbusError                   0x0000084d   Thumb Code    30  petitmodbus.o(i.HandlePetitModbusError)
+    HandlePetitModbusReadHoldingRegisters    0x00000875   Thumb Code   112  petitmodbus.o(i.HandlePetitModbusReadHoldingRegisters)
+    HandlePetitModbusWriteSingleRegister     0x000008f1   Thumb Code    84  petitmodbus.o(i.HandlePetitModbusWriteSingleRegister)
+    InitPetitModbus                          0x00000951   Thumb Code    22  petitmodbus.o(i.InitPetitModbus)
+    Init_KEY                                 0x00000971   Thumb Code   168  init.o(i.Init_KEY)
+    Init_Timer0                              0x00000a2d   Thumb Code    46  init.o(i.Init_Timer0)
+    Init_Timer1                              0x00000a69   Thumb Code    32  init.o(i.Init_Timer1)
+    Init_Timer2                              0x00000a91   Thumb Code    32  init.o(i.Init_Timer2)
+    Init_Timer3                              0x00000ab9   Thumb Code    32  init.o(i.Init_Timer3)
+    Init_UART0                               0x00000ae1   Thumb Code    30  init.o(i.Init_UART0)
+    Init_axits                               0x00000b05   Thumb Code   106  control.o(i.Init_axits)
+    Move_X                                   0x00000b89   Thumb Code    46  control.o(i.Move_X)
+    Move_Y                                   0x00000bbd   Thumb Code    46  control.o(i.Move_Y)
+    Move_Z                                   0x00000bf1   Thumb Code    46  control.o(i.Move_Z)
+    ORGIN                                    0x00000c39   Thumb Code   310  control.o(i.ORGIN)
+    PC_SW                                    0x00000da1   Thumb Code   282  pc.o(i.PC_SW)
+    PUL_R1                                   0x00000efd   Thumb Code    28  control.o(i.PUL_R1)
+    PUL_R2                                   0x00000f29   Thumb Code    28  control.o(i.PUL_R2)
+    PUL_X                                    0x00000f55   Thumb Code    30  control.o(i.PUL_X)
+    PUL_Y                                    0x00000f81   Thumb Code    30  control.o(i.PUL_Y)
+    PUL_Z                                    0x00000fad   Thumb Code    30  control.o(i.PUL_Z)
+    Pause_all                                0x00000fd9   Thumb Code    30  control.o(i.Pause_all)
+    PetitModBus_TIMER_Initialise             0x00001001   Thumb Code     8  petitmodbusport.o(i.PetitModBus_TIMER_Initialise)
+    PetitModBus_TimerValues                  0x00001009   Thumb Code    10  petitmodbusport.o(i.PetitModBus_TimerValues)
+    PetitModBus_UART_Initialise              0x00001019   Thumb Code     8  petitmodbusport.o(i.PetitModBus_UART_Initialise)
+    PetitModBus_UART_Putch                   0x00001021   Thumb Code    12  petitmodbusport.o(i.PetitModBus_UART_Putch)
+    PetitModBus_UART_String                  0x00001031   Thumb Code    28  petitmodbusport.o(i.PetitModBus_UART_String)
+    PetitSendMessage                         0x0000104d   Thumb Code    24  petitmodbus.o(i.PetitSendMessage)
+    Petit_CRC16                              0x00001069   Thumb Code    32  petitmodbus.o(i.Petit_CRC16)
+    Petit_CheckRxTimeout                     0x0000108d   Thumb Code    24  petitmodbus.o(i.Petit_CheckRxTimeout)
+    Petit_DoSlaveTX                          0x000010ad   Thumb Code    20  petitmodbus.o(i.Petit_DoSlaveTX)
+    Petit_RxDataAvailable                    0x000010c9   Thumb Code    10  petitmodbus.o(i.Petit_RxDataAvailable)
+    Petit_RxRTU                              0x000010d9   Thumb Code   174  petitmodbus.o(i.Petit_RxRTU)
+    Petit_TxRTU                              0x0000119d   Thumb Code   118  petitmodbus.o(i.Petit_TxRTU)
+    ProcessPetitModbus                       0x00001221   Thumb Code    76  petitmodbus.o(i.ProcessPetitModbus)
+    ReceiveInterrupt                         0x00001275   Thumb Code    30  petitmodbusport.o(i.ReceiveInterrupt)
+    SETUP_SYSTEM                             0x000012a1   Thumb Code   114  pc.o(i.SETUP_SYSTEM)
+    SET_SPEED                                0x0000132d   Thumb Code    30  control.o(i.SET_SPEED)
+    SYS_Init                                 0x00001361   Thumb Code   170  sys_init.o(i.SYS_Init)
+    Signal_1                                 0x00001429   Thumb Code    14  control.o(i.Signal_1)
+    Signal_2                                 0x0000143d   Thumb Code    12  control.o(i.Signal_2)
+    SystemCoreClockUpdate                    0x0000144d   Thumb Code   118  system_nuc100series.o(i.SystemCoreClockUpdate)
+    SystemInit                               0x000014dd   Thumb Code     2  system_nuc100series.o(i.SystemInit)
+    TIMER_GetModuleClock                     0x000014e1   Thumb Code    82  timer.o(i.TIMER_GetModuleClock)
+    TIMER_Open                               0x00001549   Thumb Code    94  timer.o(i.TIMER_Open)
+    TMR0_IRQHandler                          0x000015a9   Thumb Code    22  interrupt.o(i.TMR0_IRQHandler)
+    TMR1_IRQHandler                          0x000015c9   Thumb Code   128  interrupt.o(i.TMR1_IRQHandler)
+    TMR2_IRQHandler                          0x00001665   Thumb Code   204  interrupt.o(i.TMR2_IRQHandler)
+    TMR3_IRQHandler                          0x00001761   Thumb Code   128  interrupt.o(i.TMR3_IRQHandler)
+    UART02_IRQHandler                        0x000017fd   Thumb Code    20  interrupt.o(i.UART02_IRQHandler)
+    UART_Open                                0x00001815   Thumb Code   120  uart.o(i.UART_Open)
+    __scatterload_copy                       0x0000189d   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x000018ab   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x000018ad   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    main                                     0x000018bb   Thumb Code    28  main.o(i.main)
+    Region$$Table$$Base                      0x00001960   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00001980   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_nuc100series.o(.data)
+    CyclesPerUs                              0x20000004   Data           4  system_nuc100series.o(.data)
+    PllClock                                 0x20000008   Data           4  system_nuc100series.o(.data)
+    gau32ClkSrcTbl                           0x2000000c   Data          32  system_nuc100series.o(.data)
+    _RFR1                                    0x2000002c   Data           1  general.o(.data)
+    _PUL_R1                                  0x20000030   Data           4  general.o(.data)
+    _PUL_R2                                  0x20000034   Data           4  general.o(.data)
+    _runR1                                   0x20000038   Data           1  general.o(.data)
+    _runR2                                   0x20000039   Data           1  general.o(.data)
+    _reqR1                                   0x2000003c   Data           4  general.o(.data)
+    _coodhis_R1                              0x20000040   Data           4  general.o(.data)
+    show_cood_R1                             0x20000044   Data           4  general.o(.data)
+    _ORG                                     0x20000048   Data           1  general.o(.data)
+    _Auto_Maunual                            0x20000049   Data           1  general.o(.data)
+    _ups                                     0x2000004a   Data           1  general.o(.data)
+    _truc                                    0x2000004b   Data           1  general.o(.data)
+    _orgz_ed                                 0x2000004c   Data           1  general.o(.data)
+    CAM_CHOICE                               0x20000050   Data           4  general.o(.data)
+    Z_scale                                  0x20000054   Data           1  general.o(.data)
+    Z_scale_speed                            0x20000055   Data           1  general.o(.data)
+    X_scale                                  0x20000056   Data           1  general.o(.data)
+    X_scale_speed                            0x20000057   Data           1  general.o(.data)
+    Y_scale                                  0x20000058   Data           1  general.o(.data)
+    Y_scale_speed                            0x20000059   Data           1  general.o(.data)
+    Auto_speed                               0x2000005c   Data           4  general.o(.data)
+    Timer1_Tick_Counter                      0x20000060   Data           2  general.o(.data)
+    R1_scale                                 0x20000062   Data           1  general.o(.data)
+    PETITMODBUS_SLAVE_ADDRESS                0x20000064   Data           1  petitmodbus.o(.data)
+    Petit_Tx_State                           0x20000065   Data           1  petitmodbus.o(.data)
+    Petit_Rx_State                           0x20000066   Data           1  petitmodbus.o(.data)
+    Petit_Rx_Data_Available                  0x20000067   Data           1  petitmodbus.o(.data)
+    PetitModbusTimerValue                    0x20000068   Data           2  petitmodbus.o(.data)
+    Petit_Tx_Current                         0x2000006c   Data           4  petitmodbus.o(.data)
+    Petit_Tx_CRC16                           0x20000070   Data           4  petitmodbus.o(.data)
+    Petit_Tx_Buf_Size                        0x20000074   Data           4  petitmodbus.o(.data)
+    Petit_Rx_CRC16                           0x20000078   Data           4  petitmodbus.o(.data)
+    PetitReceiveCounter                      0x2000007c   Data           1  petitmodbusport.o(.data)
+    X                                        0x20000080   Data          28  general.o(.bss)
+    Y                                        0x2000009c   Data          28  general.o(.bss)
+    Z                                        0x200000b8   Data          28  general.o(.bss)
+    R1                                       0x200000d4   Data          28  general.o(.bss)
+    R2                                       0x200000f0   Data          28  general.o(.bss)
+    Petit_Tx_Data                            0x2000010c   Data          76  petitmodbus.o(.bss)
+    Petit_Tx_Buf                             0x20000158   Data          72  petitmodbus.o(.bss)
+    Petit_Rx_Data                            0x200001a0   Data          76  petitmodbus.o(.bss)
+    PetitReceiveBuffer                       0x200001ec   Data          72  petitmodbusport.o(.bss)
+    PetitRegisters                           0x20000234   Data          62  petitregconstant.o(.bss)
+    __initial_sp                             0x20000678   Data           0  startup_nuc100series.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000000d5
+
+  Load Region LR_1 (Base: 0x00000000, Size: 0x00001a00, Max: 0xffffffff, ABSOLUTE)
+
+    Execution Region ER_RO (Exec base: 0x00000000, Load base: 0x00000000, Size: 0x00001980, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00000000   0x00000000   0x000000c0   Data   RO          117    RESET               startup_nuc100series.o
+    0x000000c0   0x000000c0   0x00000000   Code   RO         1192  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000000c0   0x000000c0   0x00000004   Code   RO         1201    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000000c4   0x000000c4   0x00000004   Code   RO         1204    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO         1206    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000000c8   0x000000c8   0x00000000   Code   RO         1208    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000000c8   0x000000c8   0x00000008   Code   RO         1209    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO         1211    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000000d0   0x000000d0   0x00000000   Code   RO         1213    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000000d0   0x000000d0   0x00000004   Code   RO         1202    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000000d4   0x000000d4   0x0000004c   Code   RO          118  * .text               startup_nuc100series.o
+    0x00000120   0x00000120   0x0000002c   Code   RO         1195    .text               mc_p.l(uidiv.o)
+    0x0000014c   0x0000014c   0x00000024   Code   RO         1197    .text               mc_p.l(memcpya.o)
+    0x00000170   0x00000170   0x00000024   Code   RO         1215    .text               mc_p.l(init.o)
+    0x00000194   0x00000194   0x00000030   Code   RO          404    i.CLK_EnableModuleClock  clk.o
+    0x000001c4   0x000001c4   0x00000198   Code   RO          405    i.CLK_EnablePLL     clk.o
+    0x0000035c   0x0000035c   0x00000010   Code   RO          406    i.CLK_EnableXtalRC  clk.o
+    0x0000036c   0x0000036c   0x00000058   Code   RO          703    i.CLK_GetPLLClockFreq  uart.o
+    0x000003c4   0x000003c4   0x00000078   Code   RO          414    i.CLK_SetCoreClock  clk.o
+    0x0000043c   0x0000043c   0x00000048   Code   RO          415    i.CLK_SetHCLK       clk.o
+    0x00000484   0x00000484   0x000000cc   Code   RO          416    i.CLK_SetModuleClock  clk.o
+    0x00000550   0x00000550   0x00000024   Code   RO          243    i.CLK_SysTickDelay  control.o
+    0x00000574   0x00000574   0x0000002c   Code   RO          418    i.CLK_WaitClockReady  clk.o
+    0x000005a0   0x000005a0   0x000000d8   Code   RO          244    i.Calib_xyzr        control.o
+    0x00000678   0x00000678   0x00000078   Code   RO         1020    i.CheckPetitModbusBufferComplete  petitmodbus.o
+    0x000006f0   0x000006f0   0x0000009c   Code   RO          965    i.GPCDEF_IRQHandler  interrupt.o
+    0x0000078c   0x0000078c   0x0000001a   Code   RO          535    i.GPIO_EnableInt    gpio.o
+    0x000007a6   0x000007a6   0x00000028   Code   RO          536    i.GPIO_SetMode      gpio.o
+    0x000007ce   0x000007ce   0x00000002   PAD
+    0x000007d0   0x000007d0   0x0000007c   Code   RO         1021    i.HandleMPetitodbusWriteMultipleRegisters  petitmodbus.o
+    0x0000084c   0x0000084c   0x00000028   Code   RO         1022    i.HandlePetitModbusError  petitmodbus.o
+    0x00000874   0x00000874   0x0000007c   Code   RO         1023    i.HandlePetitModbusReadHoldingRegisters  petitmodbus.o
+    0x000008f0   0x000008f0   0x00000060   Code   RO         1024    i.HandlePetitModbusWriteSingleRegister  petitmodbus.o
+    0x00000950   0x00000950   0x00000020   Code   RO         1025    i.InitPetitModbus   petitmodbus.o
+    0x00000970   0x00000970   0x000000bc   Code   RO          900    i.Init_KEY          init.o
+    0x00000a2c   0x00000a2c   0x0000003c   Code   RO          901    i.Init_Timer0       init.o
+    0x00000a68   0x00000a68   0x00000028   Code   RO          902    i.Init_Timer1       init.o
+    0x00000a90   0x00000a90   0x00000028   Code   RO          903    i.Init_Timer2       init.o
+    0x00000ab8   0x00000ab8   0x00000028   Code   RO          904    i.Init_Timer3       init.o
+    0x00000ae0   0x00000ae0   0x00000024   Code   RO          905    i.Init_UART0        init.o
+    0x00000b04   0x00000b04   0x00000084   Code   RO          245    i.Init_axits        control.o
+    0x00000b88   0x00000b88   0x00000034   Code   RO          248    i.Move_X            control.o
+    0x00000bbc   0x00000bbc   0x00000034   Code   RO          249    i.Move_Y            control.o
+    0x00000bf0   0x00000bf0   0x00000034   Code   RO          250    i.Move_Z            control.o
+    0x00000c24   0x00000c24   0x00000014   Code   RO          906    i.NVIC_EnableIRQ    init.o
+    0x00000c38   0x00000c38   0x00000168   Code   RO          251    i.ORGIN             control.o
+    0x00000da0   0x00000da0   0x0000015c   Code   RO          369    i.PC_SW             pc.o
+    0x00000efc   0x00000efc   0x0000002c   Code   RO          252    i.PUL_R1            control.o
+    0x00000f28   0x00000f28   0x0000002c   Code   RO          253    i.PUL_R2            control.o
+    0x00000f54   0x00000f54   0x0000002c   Code   RO          254    i.PUL_X             control.o
+    0x00000f80   0x00000f80   0x0000002c   Code   RO          255    i.PUL_Y             control.o
+    0x00000fac   0x00000fac   0x0000002c   Code   RO          256    i.PUL_Z             control.o
+    0x00000fd8   0x00000fd8   0x00000028   Code   RO          257    i.Pause_all         control.o
+    0x00001000   0x00001000   0x00000008   Code   RO         1120    i.PetitModBus_TIMER_Initialise  petitmodbusport.o
+    0x00001008   0x00001008   0x00000010   Code   RO         1121    i.PetitModBus_TimerValues  petitmodbusport.o
+    0x00001018   0x00001018   0x00000008   Code   RO         1122    i.PetitModBus_UART_Initialise  petitmodbusport.o
+    0x00001020   0x00001020   0x00000010   Code   RO         1123    i.PetitModBus_UART_Putch  petitmodbusport.o
+    0x00001030   0x00001030   0x0000001c   Code   RO         1124    i.PetitModBus_UART_String  petitmodbusport.o
+    0x0000104c   0x0000104c   0x0000001c   Code   RO         1026    i.PetitSendMessage  petitmodbus.o
+    0x00001068   0x00001068   0x00000024   Code   RO         1027    i.Petit_CRC16       petitmodbus.o
+    0x0000108c   0x0000108c   0x00000020   Code   RO         1028    i.Petit_CheckRxTimeout  petitmodbus.o
+    0x000010ac   0x000010ac   0x0000001c   Code   RO         1029    i.Petit_DoSlaveTX   petitmodbus.o
+    0x000010c8   0x000010c8   0x00000010   Code   RO         1030    i.Petit_RxDataAvailable  petitmodbus.o
+    0x000010d8   0x000010d8   0x000000c4   Code   RO         1031    i.Petit_RxRTU       petitmodbus.o
+    0x0000119c   0x0000119c   0x00000084   Code   RO         1032    i.Petit_TxRTU       petitmodbus.o
+    0x00001220   0x00001220   0x00000054   Code   RO         1033    i.ProcessPetitModbus  petitmodbus.o
+    0x00001274   0x00001274   0x0000002c   Code   RO         1125    i.ReceiveInterrupt  petitmodbusport.o
+    0x000012a0   0x000012a0   0x0000008c   Code   RO          370    i.SETUP_SYSTEM      pc.o
+    0x0000132c   0x0000132c   0x00000034   Code   RO          258    i.SET_SPEED         control.o
+    0x00001360   0x00001360   0x000000c8   Code   RO          213    i.SYS_Init          sys_init.o
+    0x00001428   0x00001428   0x00000014   Code   RO          259    i.Signal_1          control.o
+    0x0000143c   0x0000143c   0x00000010   Code   RO          260    i.Signal_2          control.o
+    0x0000144c   0x0000144c   0x00000090   Code   RO            3    i.SystemCoreClockUpdate  system_nuc100series.o
+    0x000014dc   0x000014dc   0x00000002   Code   RO            4    i.SystemInit        system_nuc100series.o
+    0x000014de   0x000014de   0x00000002   PAD
+    0x000014e0   0x000014e0   0x00000068   Code   RO          646    i.TIMER_GetModuleClock  timer.o
+    0x00001548   0x00001548   0x0000005e   Code   RO          647    i.TIMER_Open        timer.o
+    0x000015a6   0x000015a6   0x00000002   PAD
+    0x000015a8   0x000015a8   0x00000020   Code   RO          966    i.TMR0_IRQHandler   interrupt.o
+    0x000015c8   0x000015c8   0x0000009c   Code   RO          967    i.TMR1_IRQHandler   interrupt.o
+    0x00001664   0x00001664   0x000000fc   Code   RO          968    i.TMR2_IRQHandler   interrupt.o
+    0x00001760   0x00001760   0x0000009c   Code   RO          969    i.TMR3_IRQHandler   interrupt.o
+    0x000017fc   0x000017fc   0x00000018   Code   RO          970    i.UART02_IRQHandler  interrupt.o
+    0x00001814   0x00001814   0x00000088   Code   RO          710    i.UART_Open         uart.o
+    0x0000189c   0x0000189c   0x0000000e   Code   RO         1219    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x000018aa   0x000018aa   0x00000002   Code   RO         1220    i.__scatterload_null  mc_p.l(handlers.o)
+    0x000018ac   0x000018ac   0x0000000e   Code   RO         1221    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x000018ba   0x000018ba   0x0000001c   Code   RO          124    i.main              main.o
+    0x000018d6   0x000018d6   0x00000002   PAD
+    0x000018d8   0x000018d8   0x00000038   Data   RO          419    .constdata          clk.o
+    0x00001910   0x00001910   0x00000020   Data   RO          648    .constdata          timer.o
+    0x00001930   0x00001930   0x00000030   Data   RO          718    .constdata          uart.o
+    0x00001960   0x00001960   0x00000020   Data   RO         1217    Region$$Table       anon$$obj.o
+
+
+    Execution Region ER_RW (Exec base: 0x20000000, Load base: 0x00001980, Size: 0x00000080, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00001980   0x0000002c   Data   RW            5    .data               system_nuc100series.o
+    0x2000002c   0x000019ac   0x00000001   Data   RW          825    .data               general.o
+    0x2000002d   0x000019ad   0x00000003   PAD
+    0x20000030   0x000019b0   0x00000004   Data   RW          830    .data               general.o
+    0x20000034   0x000019b4   0x00000004   Data   RW          831    .data               general.o
+    0x20000038   0x000019b8   0x00000001   Data   RW          835    .data               general.o
+    0x20000039   0x000019b9   0x00000001   Data   RW          836    .data               general.o
+    0x2000003a   0x000019ba   0x00000002   PAD
+    0x2000003c   0x000019bc   0x00000004   Data   RW          840    .data               general.o
+    0x20000040   0x000019c0   0x00000004   Data   RW          850    .data               general.o
+    0x20000044   0x000019c4   0x00000004   Data   RW          855    .data               general.o
+    0x20000048   0x000019c8   0x00000001   Data   RW          860    .data               general.o
+    0x20000049   0x000019c9   0x00000001   Data   RW          861    .data               general.o
+    0x2000004a   0x000019ca   0x00000001   Data   RW          862    .data               general.o
+    0x2000004b   0x000019cb   0x00000001   Data   RW          863    .data               general.o
+    0x2000004c   0x000019cc   0x00000001   Data   RW          865    .data               general.o
+    0x2000004d   0x000019cd   0x00000003   PAD
+    0x20000050   0x000019d0   0x00000004   Data   RW          866    .data               general.o
+    0x20000054   0x000019d4   0x00000001   Data   RW          867    .data               general.o
+    0x20000055   0x000019d5   0x00000001   Data   RW          868    .data               general.o
+    0x20000056   0x000019d6   0x00000001   Data   RW          869    .data               general.o
+    0x20000057   0x000019d7   0x00000001   Data   RW          870    .data               general.o
+    0x20000058   0x000019d8   0x00000001   Data   RW          871    .data               general.o
+    0x20000059   0x000019d9   0x00000001   Data   RW          872    .data               general.o
+    0x2000005a   0x000019da   0x00000002   PAD
+    0x2000005c   0x000019dc   0x00000004   Data   RW          873    .data               general.o
+    0x20000060   0x000019e0   0x00000002   Data   RW          874    .data               general.o
+    0x20000062   0x000019e2   0x00000001   Data   RW          875    .data               general.o
+    0x20000063   0x000019e3   0x00000001   PAD
+    0x20000064   0x000019e4   0x00000018   Data   RW         1035    .data               petitmodbus.o
+    0x2000007c   0x000019fc   0x00000001   Data   RW         1127    .data               petitmodbusport.o
+
+
+    Execution Region ER_ZI (Exec base: 0x20000080, Load base: 0x00001a00, Size: 0x000005f8, Max: 0xffffffff, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000080        -       0x0000001c   Zero   RW          817    .bss                general.o
+    0x2000009c        -       0x0000001c   Zero   RW          818    .bss                general.o
+    0x200000b8        -       0x0000001c   Zero   RW          819    .bss                general.o
+    0x200000d4        -       0x0000001c   Zero   RW          820    .bss                general.o
+    0x200000f0        -       0x0000001c   Zero   RW          821    .bss                general.o
+    0x2000010c        -       0x000000e0   Zero   RW         1034    .bss                petitmodbus.o
+    0x200001ec        -       0x00000048   Zero   RW         1126    .bss                petitmodbusport.o
+    0x20000234        -       0x0000003e   Zero   RW         1179    .bss                petitregconstant.o
+    0x20000272   0x00001a00   0x00000006   PAD
+    0x20000278        -       0x00000400   Zero   RW          115    STACK               startup_nuc100series.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       912        122         56          0          0       6022   clk.o
+      1248        248          0          0          0      10999   control.o
+         0          0          0         45        140       4255   general.o
+        66          0          0          0          0       1652   gpio.o
+       424         70          0          0          0      11044   init.o
+       776        144          0          0          0       5864   interrupt.o
+        28          0          0          0          0     100451   main.o
+       488         92          0          0          0       1159   pc.o
+      1088        144          0         24        224      10130   petitmodbus.o
+       120         24          0          1         72       3714   petitmodbusport.o
+         0          0          0          0         62       1563   petitregconstant.o
+        76         32        192          0       1024        704   startup_nuc100series.o
+       200         30          0          0          0      41491   sys_init.o
+       146         26          0         44          0     126659   system_nuc100series.o
+       198         22         32          0          0       2044   timer.o
+       224         34         48          0          0       2100   uart.o
+
+    ----------------------------------------------------------------------
+      6002        988        360        128       1528     329851   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+         8          0          0         14          6          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+        36          0          0          0          0         60   memcpya.o
+        44          0          0          0          0         72   uidiv.o
+
+    ----------------------------------------------------------------------
+       166         16          0          0          0        200   Library Totals
+         0          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       166         16          0          0          0        200   mc_p.l
+
+    ----------------------------------------------------------------------
+       166         16          0          0          0        200   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      6168       1004        360        128       1528     327387   Grand Totals
+      6168       1004        360        128       1528     327387   ELF Image Totals
+      6168       1004        360        128          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 6528 (   6.38kB)
+    Total RW  Size (RW Data + ZI Data)              1656 (   1.62kB)
+    Total ROM Size (Code + RO Data + RW Data)       6656 (   6.50kB)
+
+==============================================================================
+

@@ -1,0 +1,61 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.27.1.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Thinh Tula, Tula, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.27.1.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.27.1.0
+Dialog DLL:      DARMCM1.DLL V1.19.2.0
+Target DLL:      Nu_Link.dll V2.06
+Dialog DLL:      TARMCM1.DLL V1.14.1.0
+ 
+<h2>Project:</h2>
+F:\Project\Tula\Maynaprom\Code Main\MCU_Programer_auto\Modbus.uvproj
+Project File Date:  12/13/2019
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Rebuild target 'ROM_AUTOMATIC'
+assembling startup_NUC100Series.s...
+compiling system_NUC100Series.c...
+compiling SYS_init.c...
+compiling main.c...
+compiling control.c...
+control.c(388): warning:  #1-D: last line of file ends without a newline
+    
+control.c: 1 warning, 0 errors
+compiling PC.c...
+compiling gpio.c...
+compiling sys.c...
+compiling clk.c...
+compiling timer.c...
+compiling General.c...
+compiling uart.c...
+compiling Init.c...
+compiling PetitRegConstant.c...
+compiling PetitModbus.c...
+PetitModbus.c(221): warning:  #550-D: variable "Petit_ByteCount"  was set but never used
+      unsigned char   Petit_ByteCount               =0;
+PetitModbus.c: 1 warning, 0 errors
+compiling Interrupt.c...
+compiling PetitModbusPort.c...
+linking...
+Program Size: Code=6168 RO-data=360 RW-data=128 ZI-data=1528  
+After Build - User command #1: fromelf --bin ".\Objects\Modbusrtu.axf" --output ".\Objects\Modbusrtu.bin"
+After Build - User command #2: fromelf --text -c ".\Objects\Modbusrtu.axf" --output ".\Objects\Modbusrtu.txt"
+".\Objects\Modbusrtu.axf" - 0 Error(s), 2 Warning(s).
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
